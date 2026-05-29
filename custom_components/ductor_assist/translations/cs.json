@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ductor Assist",
+        "description": "Propoji Home Assistant Assist s Ductorem nebo OpenAI-compatible endpointem.",
+        "data": {
+          "provider": "Provider",
+          "endpoint_url": "URL endpointu",
+          "api_key": "Bearer token / API klic",
+          "model": "Model",
+          "system_prompt": "Systemovy prompt",
+          "timeout": "Timeout v sekundach",
+          "verify_ssl": "Overovat SSL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nepodarilo se pripojit k nastavenemu endpointu"
+    },
+    "abort": {
+      "already_configured": "Tento endpoint uz je nastaveny"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Nastaveni Ductor Assist",
+        "data": {
+          "provider": "Provider",
+          "endpoint_url": "URL endpointu",
+          "api_key": "Bearer token / API klic",
+          "model": "Model",
+          "system_prompt": "Systemovy prompt",
+          "timeout": "Timeout v sekundach",
+          "verify_ssl": "Overovat SSL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nepodarilo se pripojit k nastavenemu endpointu"
+    }
+  }
+}

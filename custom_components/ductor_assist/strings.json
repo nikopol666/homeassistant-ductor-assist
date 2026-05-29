@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ductor Assist",
+        "description": "Connect Home Assistant Assist to Ductor or an OpenAI-compatible endpoint.",
+        "data": {
+          "provider": "Provider",
+          "endpoint_url": "Endpoint URL",
+          "api_key": "Bearer token / API key",
+          "model": "Model",
+          "system_prompt": "System prompt",
+          "timeout": "Timeout in seconds",
+          "verify_ssl": "Verify SSL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the configured endpoint"
+    },
+    "abort": {
+      "already_configured": "This endpoint is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ductor Assist options",
+        "data": {
+          "provider": "Provider",
+          "endpoint_url": "Endpoint URL",
+          "api_key": "Bearer token / API key",
+          "model": "Model",
+          "system_prompt": "System prompt",
+          "timeout": "Timeout in seconds",
+          "verify_ssl": "Verify SSL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the configured endpoint"
+    }
+  }
+}
