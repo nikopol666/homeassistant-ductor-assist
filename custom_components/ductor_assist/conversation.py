@@ -55,13 +55,6 @@ class DuctorConversationEntity(conversation.ConversationEntity):
         """Return supported languages."""
         return MATCH_ALL
 
-    async def async_process(
-        self,
-        user_input: conversation.ConversationInput,
-    ) -> conversation.ConversationResult:
-        """Process a sentence through the configured Ductor endpoint."""
-        return await self._async_process_ductor(user_input)
-
     async def _async_handle_message(
         self,
         user_input: conversation.ConversationInput,
