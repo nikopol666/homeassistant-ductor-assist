@@ -59,6 +59,19 @@ Response can use any of these response text keys:
 
 Accepted response keys are `response`, `text`, `message` and `answer`.
 
+## Home Assistant Native Control
+
+Ductor Assist first lets Home Assistant handle native control intents and
+sentence triggers. This keeps common voice commands local to Home Assistant:
+
+- lights, switches, scenes and scripts;
+- climate, covers and other domains supported by Home Assistant Assist;
+- Home Assistant voice timers.
+
+If Home Assistant cannot handle the sentence, Ductor Assist falls back to the
+configured OpenAI-compatible endpoint or Ductor bridge. This is where broader
+Ductor features such as Mealie, homelab tools or memory should be connected.
+
 ## Select in Assist
 
 After setup, go to:
@@ -67,6 +80,5 @@ Settings -> Voice assistants -> your pipeline -> Conversation agent -> Ductor
 
 ## Notes
 
-This first version returns spoken responses through Assist. Direct Home
-Assistant entity control should be handled either by the endpoint you configure,
-or added later through a dedicated bridge that can call the Home Assistant API.
+The OpenAI-compatible mode is only a language endpoint. Broader tool access
+requires a Ductor bridge endpoint with an explicit permission policy.
