@@ -14,7 +14,7 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .api import DuctorAssistClient, DuctorAssistError
-from .const import DOMAIN
+from .const import CONF_CONTINUE_CONVERSATION, DEFAULT_CONTINUE_CONVERSATION, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -85,7 +85,7 @@ class DuctorConversationEntity(conversation.ConversationEntity):
                 return conversation.ConversationResult(
                     response=response,
                     conversation_id=user_input.conversation_id,
-                    continue_conversation=False,
+                    continue_conversation=self._continue_conversation,
                 )
 
             intent_response = await conversation.async_handle_intents(
@@ -103,7 +103,7 @@ class DuctorConversationEntity(conversation.ConversationEntity):
         return conversation.ConversationResult(
             response=intent_response,
             conversation_id=user_input.conversation_id,
-            continue_conversation=False,
+            continue_conversation=self._continue_conversation,
         )
 
     async def _async_process_ductor(
@@ -135,8 +135,14 @@ class DuctorConversationEntity(conversation.ConversationEntity):
         return conversation.ConversationResult(
             response=response,
             conversation_id=conversation_id,
-            continue_conversation=False,
+            continue_conversation=self._continue_conversation,
         )
 
     async def async_prepare(self, language: str | None = None) -> None:
         """Prepare the agent."""
+
+    @property
+    def _continue_conversation(self) -> bool:
+        """Return whether HA should keep listening after this response."""
+        settings = {**self._config_entry.data, **self._config_entry.options}
+        return bool(settings.get(CONF_CONTINUE_CONVERSATION, DEFAULT_CONTINUE_CONVERSATION))

@@ -11,7 +11,8 @@
           "model": "Model",
           "system_prompt": "System prompt",
           "timeout": "Timeout in seconds",
-          "verify_ssl": "Verify SSL"
+          "verify_ssl": "Verify SSL",
+          "continue_conversation": "Continue listening after responses"
         }
       }
     },
@@ -33,7 +34,8 @@
           "model": "Model",
           "system_prompt": "System prompt",
           "timeout": "Timeout in seconds",
-          "verify_ssl": "Verify SSL"
+          "verify_ssl": "Verify SSL",
+          "continue_conversation": "Continue listening after responses"
         }
       }
     },

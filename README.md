@@ -78,6 +78,13 @@ After setup, go to:
 
 Settings -> Voice assistants -> your pipeline -> Conversation agent -> Ductor
 
+## Continued Conversation
+
+In Ductor Assist options, enable **Continue listening after responses** when
+your voice satellite/card supports Home Assistant's continued conversation
+flow. When enabled, Ductor Assist returns `continue_conversation=True` for
+native Home Assistant intents and Ductor bridge responses.
+
 ## Notes
 
 The OpenAI-compatible mode is only a language endpoint. Broader tool access

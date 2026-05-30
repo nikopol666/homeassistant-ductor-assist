@@ -14,12 +14,14 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from .api import DuctorAssistClient, DuctorAssistError
 from .const import (
     CONF_API_KEY,
+    CONF_CONTINUE_CONVERSATION,
     CONF_ENDPOINT_URL,
     CONF_MODEL,
     CONF_PROVIDER,
     CONF_SYSTEM_PROMPT,
     CONF_TIMEOUT,
     CONF_VERIFY_SSL,
+    DEFAULT_CONTINUE_CONVERSATION,
     DEFAULT_MODEL,
     DEFAULT_PROVIDER,
     DEFAULT_SYSTEM_PROMPT,
@@ -82,6 +84,13 @@ def _schema(defaults: dict[str, Any] | None = None) -> vol.Schema:
             vol.Optional(
                 CONF_VERIFY_SSL,
                 default=defaults.get(CONF_VERIFY_SSL, DEFAULT_VERIFY_SSL),
+            ): bool,
+            vol.Optional(
+                CONF_CONTINUE_CONVERSATION,
+                default=defaults.get(
+                    CONF_CONTINUE_CONVERSATION,
+                    DEFAULT_CONTINUE_CONVERSATION,
+                ),
             ): bool,
         },
     )
